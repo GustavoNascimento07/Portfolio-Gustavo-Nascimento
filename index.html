@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Gustavo Nascimento</title>
+
+  <style>
+    /* ===== ESTILOS GERAIS ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 0 10%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== TEXTOS ===== */
+    .text {
+      max-width: 50%;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      margin-top: 10px;
+      color: #ff3b3b; /* nome em vermelho */
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    /* ===== BOTÃO ===== */
+    .btn {
+      margin-top: 20px;
+      background-color: #ff3b3b;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff5050;
+    }
+
+    /* ===== FOTO ===== */
+    .image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20% 30% 50% 20% / 30% 50% 20% 40%;
+      border: 3px solid #ff3b3b;
+      box-shadow: 0 0 20px rgba(255, 59, 59, 0.4);
+    }
+
+    /* ===== FUNDO ANIMADO ===== */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* ===== ÍCONES FIXOS NO CANTO INFERIOR ESQUERDO ===== */
+    .social-fixed {
+      position: fixed;
+      bottom: 25px;
+      left: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .social-fixed a svg {
+      transition: 0.3s;
+    }
+
+    .social-fixed a:hover svg {
+      fill: #ff3b3b;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Fundo animado -->
+  <canvas id="bg"></canvas>
+
+  <div class="container">
+    <div class="text">
+      <h1>Meu nome é</h1>
+      <h2>Gustavo Nascimento</h2>
+      <p>Sou desenvolvedor</p>
+
+      <!-- Botão de contato (abre o WhatsApp) -->
+      <button class="btn" onclick="window.open('https://wa.me/5511970582152', '_blank')">Contato</button>
+    </div>
+
+    <div class="image">
+      <img src="./minhafoto.jpeg" alt="Foto de Gustavo Nascimento">
+    </div>
+  </div>
+
+  <!-- ÍCONES FIXOS NO CANTO INFERIOR ESQUERDO -->
+  <div class="social-fixed">
+    <a href="https://github.com/GustavoNascimento07" target="_blank" title="GitHub">
+      <!-- GitHub SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
+        3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+        0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 
+        1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.809 
+        1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.931 
+        0-1.31.465-2.381 1.235-3.221-.135-.303-.54-1.523.105-3.176 
+        0 0 1.005-.322 3.3 1.23a11.51 11.51 0 0 1 3-.405c1.02.005 
+        2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 
+        1.653.24 2.873.12 3.176.765.84 1.23 1.911 1.23 3.221 
+        0 4.61-2.805 5.625-5.475 5.921.42.36.81 1.096.81 
+        2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 
+        22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 
+        .297z"/>
+      </svg>
+    </a>
+
+    <a href="https://www.linkedin.com/in/gustavo-da-silva-nascimento-812044272/" target="_blank" title="LinkedIn">
+      <!-- LinkedIn SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 
+        5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 
+        5-5v-14c0-2.761-2.238-5-5-5zm-11.334 
+        20h-2.666v-11h2.666v11zm-1.333-12.263c-.853 
+        0-1.546-.693-1.546-1.547 0-.853.693-1.546 
+        1.546-1.546s1.547.693 
+        1.547 1.546c0 .854-.694 1.547-1.547 
+        1.547zm13.667 12.263h-2.666v-5.604c0-1.336-.025-3.056-1.862-3.056-1.862 
+        0-2.147 1.454-2.147 2.958v5.702h-2.666v-11h2.56v1.507h.036c.356-.674 
+        1.226-1.386 2.526-1.386 2.701 0 3.202 
+        1.777 3.202 4.087v6.792z"/>
+      </svg>
+    </a>
+
+    <a href="https://wa.me/5511970582152" target="_blank" title="WhatsApp">
+      <!-- WhatsApp SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.78 11.78 0 0012 0C5.38 
+        0 0 5.38 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.2-1.6A11.95 
+        11.95 0 0012 24c6.62 0 12-5.38 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 
+        22a9.88 9.88 0 01-5.04-1.36l-.36-.21-3.68.95.98-3.59-.23-.37A9.93 
+        9.93 0 012 12c0-5.51 4.49-10 10-10s10 
+        4.49 10 10-4.49 10-10 10zm5.49-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 
+        1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.77-1.68-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.57-.48-.5-.67-.51h-.57c-.2 
+        0-.52.07-.8.37s-1.05 1.03-1.05 
+        2.5 1.08 2.89 1.23 3.09c.15.2 2.13 3.25 5.17 4.56.72.31 1.28.5 
+        1.72.64.72.23 1.37.2 1.89.12.58-.09 
+        1.77-.72 2.02-1.41.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ===== SCRIPT PARA O FUNDO ANIMADO ===== -->
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    let particlesArray;
+
+    class Particle {
+      constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+      }
+
+      update() {
+        if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+        if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.draw();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      const numberOfParticles = (canvas.height * canvas.width) / 9000;
+      for (let i = 0; i < numberOfParticles; i++) {
+        const size = Math.random() * 2 + 1;
+        const x = Math.random() * (innerWidth - size * 2);
+        const y = Math.random() * (innerHeight - size * 2);
+        const directionX = Math.random() * 0.5 - 0.25;
+        const directionY = Math.random() * 0.5 - 0.25;
+        const color = '#fff';
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+      }
+    }
+
+    function connect() {
+      let opacityValue = 1;
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          let distance =
+            (particlesArray[a].x - particlesArray[b].x) ** 2 +
+            (particlesArray[a].y - particlesArray[b].y) ** 2;
+          if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+            opacityValue = 1 - distance / 20000;
+            ctx.strokeStyle = 'rgba(255,255,255,' + opacityValue + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+      connect();
+    }
+
+    window.addEventListener('resize', function() {
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+      init();
+    });
+
+    init();
+    animate();
+  </script>
+</body>
+</html>
